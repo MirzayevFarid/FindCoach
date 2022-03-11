@@ -6,7 +6,7 @@
         </div>
         <div>
             <label for="message">Message</label>
-            <textarea rows="5" id="message" v-model="mesage"></textarea>
+            <textarea rows="5" id="message" v-model="message"></textarea>
         </div>
         <p class="errors" v-if="!formIsValid">Please enter a valid email and non-empty message</p>
         <div class="actions">
@@ -32,6 +32,9 @@ export default {
                 this.formIsValid = false;
                 return
             }
+
+            console.log(this.email)
+            console.log(this.message)
 
             this.$store.dispatch('requests/contactCoach',{
               email: this.email,
